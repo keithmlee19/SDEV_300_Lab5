@@ -4,17 +4,17 @@ import sys
 import pandas as pd
 import matplotlib.pyplot as plt
 
-def analyze_columns(df, col):
+def analyze_columns(dfr, col):
     '''Calculates summary stats and histogram for given dataframe/column'''
     print("The statistics for this column are:")
-    print("Count = ", df[col].count())
+    print("Count = ", dfr[col].count())
     # prints mean and stdev to 1 decimal place
-    print("Mean = ", f"{df[col].mean():.1f}")
-    print("Standard Deviation = ", f"{df[col].std():.1f}")
-    print("Min = ", df[col].min())
-    print("Max = ", df[col].max())
+    print("Mean = ", f"{dfr[col].mean():.1f}")
+    print("Standard Deviation = ", f"{dfr[col].std():.1f}")
+    print("Min = ", dfr[col].min())
+    print("Max = ", dfr[col].max())
     print("The histogram of this column is now displayed.")
-    df[col].hist()
+    dfr[col].hist()
     plt.show()
 
 def handle_pop_data():
@@ -42,7 +42,7 @@ def handle_pop_data():
                 print("Invalid choice, please enter a letter a-d")
         except ValueError:
             print("Please enter a letter")
-            
+
 def handle_housing_data():
     '''Handles user input for population data'''
     housing_data = pd.read_csv("Housing.csv")
