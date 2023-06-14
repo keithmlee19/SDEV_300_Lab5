@@ -70,7 +70,8 @@ def handle_housing_data():
             elif user_input == "f":
                 print("You selected to exit the column menu")
                 break
-            print("Invalid choice, please enter a letter a-d")
+            else:
+                print("Invalid choice, please enter a letter a-d")
         except ValueError:
             print("Please enter a letter")
 
